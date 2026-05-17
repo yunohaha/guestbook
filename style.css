@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #1b5b8c;
+    font-family: system-ui, 'Segoe UI', sans-serif;
+    padding: 30px;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.header {
+    background: #1e2a3a;
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.header h1 { font-size: 1.7rem; }
+.user-info { background: #2c3e4e; padding: 6px 12px; border-radius: 30px; }
+.btn {
+    background: #2c7da0;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+}
+.btn-outline {
+    background: transparent;
+    border: 1px solid white;
+}
+.content {
+    padding: 25px;
+}
+.form-box {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+}
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 90px;
+}
+.comment {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 18px 0;
+}
+.comment-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+.badge {
+    background: #e74c3c;
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 30px;
+}
+.date {
+    font-size: 12px;
+    color: #5a6e7c;
+}
+.comment-text {
+    margin: 10px 0;
+    line-height: 1.45;
+}
+.comment-actions {
+    display: flex;
+    gap: 10px;
+}
+.comment-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 30px;
+}
+.pagination {
+    margin-top: 25px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.pagination a, .pagination .current {
+    padding: 6px 12px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+.pagination .current {
+    background: #2c7da0;
+    color: white;
+    border-color: #2c7da0;
+}
+.form-wrap {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    text-align: center;
+}
+.form-wrap input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 40px;
+    border: 1px solid #ccc;
+}
+.error {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 10px;
+    border-radius: 40px;
+    margin-bottom: 15px;
+}
+.msg {
+    background: #dcfce7;
+    padding: 10px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+}
+.empty {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 40px;
+}
+.info {
+    margin-top: 15px;
+    font-size: 13px;
+    color: gray;
+}
