@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$host = '10.33.0.2';
+$host = '192.168.0.8';
 $dbname = 'guestbook_db';
 $user = 'root';
 $pass = '';

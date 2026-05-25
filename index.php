@@ -75,7 +75,7 @@ $comments = $stmt->fetchAll();
                     <div class="comment-actions">
                         <?php if (isLoggedIn() && $_SESSION['user_id'] == $c['user_id']): ?>
                             <button class="edit-btn" data-id="<?= $c['id'] ?>" data-text="<?= h($c['content']) ?>">Ред.</button>
-                            <button class="del-btn" data-id="<?= $c['id'] ?>">Мусор</button>
+                            <button class="del-btn" data-id="<?= $c['id'] ?>">Удалить</button>
                         <?php endif; ?>
                         <?php if (isAdmin() && $_SESSION['user_id'] != $c['user_id']): ?>
                             <button class="admin-del-btn" data-id="<?= $c['id'] ?>">удалить</button>
@@ -89,6 +89,15 @@ $comments = $stmt->fetchAll();
 </div>
 
 <script>
+    function escapeHtml(text) {
+        return text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
     document.querySelectorAll('.edit-btn').forEach(btn => {
         btn.addEventListener('click', async () => {
             let id = btn.dataset.id;
@@ -102,7 +111,8 @@ $comments = $stmt->fetchAll();
                 });
                 let data = await res.json();
                 if (data.success) {
-                    document.getElementById('text' + id).innerHTML = newText.replace(/\n/g, '<br>');
+                    let escapedText = escapeHtml(newText);
+                    document.getElementById('text' + id).innerHTML = escapedText.replace(/\n/g, '<br>');
                     alert('Обновлено');
                 } else {
                     alert('Ошибка: ' + data.error);
